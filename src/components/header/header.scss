@@ -1,0 +1,36 @@
+@import '../../style/constants.scss';
+
+.navbar{
+    background-color: $backgroundColor !important;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    position: fixed !important;
+    width: 100%;
+    z-index: 100;
+}
+
+.navbar-brand,
+.nav-link{
+    color: white !important;
+}
+
+.nav-link{
+    font-weight: normal !important;
+}
+
+.search-content{
+    display: flex;
+    align-items: center;
+
+    .input-search{
+        padding-left: 35px !important;
+    }
+
+    i{
+        position: absolute;
+        font-size: x-large;
+        margin: 10px;
+        color: #757575;
+        top: 8px;
+    }
+}
