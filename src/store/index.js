@@ -1,14 +1,14 @@
+import homeStore from './homeStore.js'
+import movieStore from './movieStore.js'
 import { createStore } from 'vuex'
 
-export default createStore({
-  state: {
-  },
-  getters: {
-  },
-  mutations: {
-  },
-  actions: {
-  },
-  modules: {
+const store = createStore({
+  //Varios stores se unifican en un sólo módulo
+  modules:{ 
+    homeStore,
+    movieStore
   }
+
 })
+
+export default store
