@@ -54,8 +54,8 @@
     },
 
     methods:{
-        findMovieByText(event){
-            event.preventDefault();
+        findMovieByText($event){
+            $event.preventDefault()
             if(this.textoBusqueda.trim().length > 0){
                 getFindMovieByText(this.$store, this.textoBusqueda)
             }else{
