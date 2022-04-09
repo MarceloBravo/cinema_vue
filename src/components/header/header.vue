@@ -8,22 +8,24 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <router-link class="nav-link active" aria-current="page" to="/">Home</router-link>
+                    <router-link class="nav-link active" aria-current="page" to="/">Inicio</router-link>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link" href="#">Series</a>
+                    <router-link class="nav-link" to="/about">Acerca de...</router-link>
                 </li>
+                <!--
                 <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Películas
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <li><a class="dropdown-item" href="#">Más populares</a></li>
-                    <li><a class="dropdown-item" href="#">Estrenos</a></li>
-                    <li><hr class="dropdown-divider"></li>
-                    <li><a class="dropdown-item" href="#">Todas</a></li>
-                </ul>
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Películas
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="#">Más populares</a></li>
+                        <li><a class="dropdown-item" href="#">Estrenos</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="#">Todas</a></li>
+                    </ul>
                 </li>
+                -->
             </ul>
             <form class="d-flex">
                 <div class="search-content">
@@ -38,6 +40,7 @@
 </template>
 
 <script>
+    import { mapGetters } from 'vuex'
     import { getFindMovieByText, getTopRated } from '../../axios/moviesLists.js'
 
     export default {
@@ -45,9 +48,27 @@
 
     data(){
         return {
-            textoBusqueda: ''
+            textoBusqueda: '',
         }
     },
+
+    mounted(){
+      this.textoBusqueda = this.getFindText 
+    },
+
+    computed:{
+        ...mapGetters(['getFindText'])
+    },
+
+    watch:{
+        getFindText:function(){
+            this.textoBusqueda = this.getFindText
+            if(this.$router.currentRoute._value.fullPath !== '/'){
+                this.$router.push('/')       
+            }
+        }
+    },
+
 
     props:{
         appTitle: {type: String}
