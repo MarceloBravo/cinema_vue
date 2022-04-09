@@ -10,7 +10,12 @@
             -->
             <div class="carousel-inner">
                 <div :class="`carousel-item ${i === 0 ? 'active' : ''}`" v-for="(item, i) in $store.getters.getPopularMovies.results" :key="i">
-                    <img :src="'https://image.tmdb.org/t/p/w500'+item.backdrop_path" class="d-block w-100" :alt="item.title">
+                    <img 
+                        :src="'https://image.tmdb.org/t/p/w500'+item.backdrop_path" 
+                        class="d-block w-100" 
+                        :alt="item.title"
+                        @click="movieDetail(item.id)"
+                    >
                     <div class="carousel-caption d-none d-md-block">
                         <h5>{{ item.title }}</h5>
                         <p>{{ item.overview }}</p>
@@ -38,6 +43,12 @@
 
         mounted(){
             getPopularMovies(this.$store)
+        },
+
+        methods: {
+            movieDetail(id){
+                this.$router.push('/movie-detail/' + id)
+            }
         },
         
     }

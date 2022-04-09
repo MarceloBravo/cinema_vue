@@ -3,7 +3,7 @@
         <h2 class="titleSection"> {{ titleSection }} </h2>
         <div class="catalogo-container">
             <div v-for="(item, i) in $store.getters.getMoviesList.results" :key="i" class="movie-container">
-                <MovieCard :data="item" />
+                <MovieCard :data="item"/>
             </div>
         </div>
     </div>
@@ -11,24 +11,41 @@
 
 <script>
     import MovieCard from '../../components/movieCard/movieCard.vue'
-    import { getTopRated } from '../../axios/moviesLists.js'
+    import { getTopRated, getFindMovieByText } from '../../axios/moviesLists.js'
+    import { mapGetters } from 'vuex'
 
     export default {
         name: 'MovieListComponent',
 
+        components:{
+         MovieCard   
+        },
+
         data(){
             return {
-                titleSection: 'Más populares'
+                titleSection: 'Películas',
             }
         },
 
         mounted(){
-            getTopRated(this.$store)
+            if(this.getFindText.length === 0){
+                getTopRated(this.$store)
+            }else{
+                getFindMovieByText(this.$store, this.getFindText)
+            }
         },
 
-        components:{
-         MovieCard   
+        computed:{
+            ...mapGetters(['getFindText'])
+        },
+        
+        watch:{
+            getFindText:function(){
+                this.titleSection = this.getFindText ? 'Resultado de la búsqueda'  : 'Películas'
+            }
         }
+
+
     }
 </script>
 

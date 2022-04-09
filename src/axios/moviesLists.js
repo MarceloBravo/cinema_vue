@@ -5,6 +5,7 @@ import { endPoint, apiKey } from '../global/constants'
 export  const getTopRated = (store) => {
     axios.get(`${endPoint}movie/top_rated?api_key=${apiKey}&language=en-US`).then(res => {
         store.dispatch('topRated',res.data)
+        store.dispatch('findText', '')
     }).catch(error =>{
         console.log('getMoviesList', error) 
         store.dispatch('topRated',[])
@@ -22,8 +23,8 @@ export  const getPopularMovies = (store) => {
 
 export const getFindMovieByText = (store, text) => {
     axios.get(`${endPoint}search/movie?api_key=${apiKey}&language=en-US&page=1&include_adult=false&query=${text}`).then(res  =>{
-        console.log('RES. BÚSQUEDA',res.data)
         store.dispatch('findMovieByText', res.data)
+        store.dispatch('findText', text)
     }).catch(error => {
         console.log('Error en getFindMovieByText: ', error)
         store.dispatch('findMovieByText', [])

@@ -6,6 +6,10 @@
 @import 'https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css';
 @import './style/constants.scss';
 
+html{
+  background: #080514;
+}
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
