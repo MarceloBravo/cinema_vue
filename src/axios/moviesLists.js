@@ -1,5 +1,5 @@
 import axios from "axios";
-import { endPoint, apiKey } from '../global/constants'
+import { endPoint, apiKey } from '../constants/js/constants'
 
 
 export  const getTopRated = (store) => {

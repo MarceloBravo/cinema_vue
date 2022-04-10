@@ -59,10 +59,10 @@
 </template>
 
 <script>
-    import Header from '../components/header/header.vue'
-    import MovieVideo from '../components/movieVideo/movieVideo.vue'
-    import { getMovie, getMovieVideo } from '../axios/movieDetail.js'
-    import { posterEndPoint } from '@/global/constants'
+    import Header from '../../components/header/header.vue'
+    import MovieVideo from '../../components/movieVideo/movieVideo.vue'
+    import { getMovie, getMovieVideo } from '../../axios/movieDetail.js'
+    import { posterEndPoint } from '@/constants/js/constants'
     
 
     export default {
@@ -108,5 +108,5 @@
 </script>
 
 <style lang="scss">
-    @import '../style/views/MovieDetailView.scss';
+    @import './MovieDetailView.scss';
 </style>
