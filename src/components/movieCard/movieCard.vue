@@ -13,7 +13,7 @@
 </template>
 
 <script>
-    import { posterEndPoint } from "@/global/constants"
+    import { posterEndPoint } from "@/constants/js/constants"
 
     export default {
         name: 'MovieCardComponent',
@@ -55,7 +55,5 @@
 </script>
 
 <style lang="scss">
-    img{
-        cursor: pointer;
-    }
+    @import './movieCard.scss';
 </style>

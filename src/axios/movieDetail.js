@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { endPoint, apiKey } from '../global/constants'
+import { endPoint, apiKey } from '../constants/js/constants'
 
 export const getMovie = (store, id) => {
     axios.get(`${endPoint}/movie/${id}?api_key=${apiKey}&language=en-US`).then(res => {

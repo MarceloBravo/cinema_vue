@@ -21,7 +21,7 @@
 
 <script>
     import { mapGetters } from 'vuex'
-    import { youtubeEndPoint } from '../../global/constants.js'
+    import { youtubeEndPoint } from '../../constants/js/constants.js'
     import { getMovieVideo } from '../../axios/movieDetail.js'
 
     export default {    
@@ -77,5 +77,4 @@
 
 <style lang="scss">
     @import './movieVideo.scss';
-    
 </style>

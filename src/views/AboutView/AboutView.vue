@@ -6,7 +6,7 @@
       <h3>Desarrollado con: </h3>
       <div class="row">
         <div class="col-md-3 offset-md-1">
-          <img src="../../public/img/vue.png" alt="VueJs">
+          <img src="../../assets/logo.png" alt="VueJs">
         </div>
         <div class="col-md-7">
           Vue.js es un framework de JavaScript de código abierto para la construcción de 
@@ -23,11 +23,11 @@
 </template>
 
 <style lang="scss">
-  @import '../style/views/aboutView.scss';
+  @import './aboutView.scss';
 </style>
 
 <script>
-  import Header from '../components/header/header.vue'
+  import Header from '../../components/header/header.vue'
   import { mapGetters } from 'vuex'
 
   export default {
