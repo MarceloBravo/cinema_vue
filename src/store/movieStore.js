@@ -31,6 +31,21 @@ const state = {
         results: []
     },
     visibilityVideoState: false,
+    reviews: {
+        id: null,
+        page: 0,
+        total_pages: 0,
+        total_results: 0,
+        results: []
+    },
+    credits: {
+        id: null,
+        cast: []
+    },
+    similarMovies: {
+        page: 0,
+        results: []
+    }
 }
 
 const getters = {
@@ -38,7 +53,13 @@ const getters = {
 
     getMovieVideo:state => state.movieVideo,
 
-    getVisibilityVideoState: state => state.visibilityVideoState
+    getVisibilityVideoState: state => state.visibilityVideoState,
+
+    getReviews: state => state.reviews,
+
+    getCredits: state => state.credits,
+
+    getSimilarMovies: state => state.similarMovies
 }
 
 const mutations = {
@@ -52,6 +73,18 @@ const mutations = {
 
     setVisibilityVideoStrate(state, data){
         state.visibilityVideoState = data
+    },
+
+    setReviews(state, data){
+        state.reviews = data
+    },
+
+    setCredits(state, data){
+        state.credits = data
+    },
+
+    setSimilarMovies(state, data){
+        state.similarMovies = data
     }
 }
 
@@ -60,7 +93,13 @@ const actions = {
 
     movieVideo:(context, data) => context.commit('setMovieVideo', data),
 
-    visibilityVideoState:(context, data) => context.commit('setVisibilityVideoStrate', data)
+    visibilityVideoState:(context, data) => context.commit('setVisibilityVideoStrate', data),
+
+    reviews:(context, data) => context.commit('setReviews', data),
+
+    credits:(context, data) => context.commit('setCredits', data),
+
+    similarMovies:(context, data) => context.commit('setSimilarMovies', data)
 }
 
 const modules = {

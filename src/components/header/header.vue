@@ -1,6 +1,7 @@
 <template>
-    <nav class="navbar navbar-expand-lg navbar-light">
+    <nav :class="'navbar navbar-expand-lg navbar-light ' + (windowTop ? '' : 'scrollIsNotOnTop')">
         <div class="container-fluid">
+            <img src="../../assets/logo.png" alt="Logo Vue">
             <router-link class="navbar-brand" to="/">Cinema</router-link>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -49,11 +50,18 @@
     data(){
         return {
             textoBusqueda: '',
+            windowTop: true,
         }
     },
 
     mounted(){
-      this.textoBusqueda = this.getFindText 
+        window.addEventListener('scroll', this.handlerScroll)
+        this.textoBusqueda = this.getFindText 
+        this.handlerScroll = this.onScroll
+    },
+
+    beforeUnmount() {
+        window.removeEventListener('scroll', this.handlerScroll)
     },
 
     computed:{
@@ -66,9 +74,8 @@
             if(this.$router.currentRoute._value.fullPath !== '/'){
                 this.$router.push('/')       
             }
-        }
+        },
     },
-
 
     props:{
         appTitle: {type: String}
@@ -82,7 +89,12 @@
             }else{
                 getTopRated(this.$store)
             }
-        }
+        },
+
+        handlerScroll(e) {
+            this.windowTop = window.top.scrollY === 0 || e.target.documentElement.scrollTop === 0
+        },
+        
     }
 }
 </script>

@@ -8,7 +8,6 @@ const getters = {
 
 const mutations = {
     setFindText(state, data){
-        console.log('setFindText',data)
         state.findText = data
     }
 }
