@@ -1,0 +1,21 @@
+.carousel-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 50%;
+  padding-top: 56px;
+}
+
+.carousel-container .carousel {
+  width: 65%;
+}
+
+.carousel-container .carousel div div .carousel-caption {
+  color: #000404;
+  background-color: #ffffff66;
+}
+/*# sourceMappingURL=carousel.css.map */

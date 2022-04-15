@@ -7,8 +7,8 @@ export  const getTopRated = (store) => {
         store.dispatch('topRated',res.data)
         store.dispatch('findText', '')
     }).catch(error =>{
-        console.log('getMoviesList', error) 
-        store.dispatch('topRated',[])
+        console.log('getMoviesListError', error) 
+        store.dispatch('errorHandler',[])
     })
 }
 
@@ -16,8 +16,8 @@ export  const getPopularMovies = (store) => {
     axios.get(`${endPoint}movie/popular?api_key=${apiKey}&language=en-US&page=1`).then(res => {
         store.dispatch('popularMovies',res.data)
     }).catch(error =>{
-        console.log('getPopularMovies', error);
-        store.dispatch('popularMovies',[])
+        console.log('getPopularMoviesError', error);
+        store.dispatch('errorHandler',[])
     })
 }
 
@@ -27,6 +27,6 @@ export const getFindMovieByText = (store, text) => {
         store.dispatch('findText', text)
     }).catch(error => {
         console.log('Error en getFindMovieByText: ', error)
-        store.dispatch('findMovieByText', [])
+        store.dispatch('errorHandler', [])
     })
 }

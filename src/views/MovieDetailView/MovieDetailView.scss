@@ -25,15 +25,19 @@
         .logo-company{
             align-content: center;
             width: 160px;
-            display: contents;
+            display: flex;
 
-            img{
-                margin: 10px;
-                background: white;
-                padding: 2px;
+            div{
+                width: fit-content;
 
-                max-height: 55px;
-                width: auto;
+                img{
+                    margin: 10px;
+                    background: white;
+                    padding: 2px;
+
+                    max-height: 55px;
+                    width: auto;
+                }
             }
         }
     }
@@ -48,4 +52,12 @@
             right: 0px;
         }
     }
+}
+
+.tab-container{
+    padding: 5%;
+}
+
+.nav-link.active{
+    background-color: #080514 !important;
 }

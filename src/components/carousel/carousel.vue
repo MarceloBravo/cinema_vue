@@ -37,6 +37,7 @@
 
 <script>
     import { getPopularMovies } from '../../axios/moviesLists.js'
+    import { getMovie, getMovieVideo, getReviews, getCredits, getSimilarMovies } from '../../axios/movieDetail.js'
 
     export default {
         name: 'CarouselComponent',
@@ -47,6 +48,13 @@
 
         methods: {
             movieDetail(id){
+                const store = this.$store
+                getMovie(store, id)
+                getMovieVideo(store, id)
+                getReviews(store, id, 1)
+                getCredits(store, id)
+                getSimilarMovies(store, id)
+
                 this.$router.push('/movie-detail/' + id)
             }
         },

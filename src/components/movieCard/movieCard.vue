@@ -14,6 +14,7 @@
 
 <script>
     import { posterEndPoint } from "@/constants/js/constants"
+    import { getMovie, getMovieVideo, getReviews, getCredits, getSimilarMovies } from '../../axios/movieDetail.js'
 
     export default {
         name: 'MovieCardComponent',
@@ -46,6 +47,13 @@
 
         methods: {
             movieDetail(id){
+                const store = this.$store
+                getMovie(store, id)
+                getMovieVideo(store, id)
+                getReviews(store, id, 1)
+                getCredits(store, id)
+                getSimilarMovies(store, id)
+
                 this.$router.push('/movie-detail/' + id)
             }
         },
@@ -55,5 +63,6 @@
 </script>
 
 <style lang="scss">
+
     @import './movieCard.scss';
 </style>

@@ -1,0 +1,46 @@
+.navbar {
+  background-color: #080514 !important;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  position: fixed !important;
+  width: 100%;
+  z-index: 100;
+}
+
+.navbar-brand,
+.nav-link {
+  color: white !important;
+}
+
+.navbar-brand {
+  color: #00fff3 !important;
+}
+
+.nav-link {
+  font-weight: normal !important;
+}
+
+.search-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.search-content .input-search {
+  padding-left: 35px !important;
+}
+
+.search-content i {
+  position: absolute;
+  font-size: x-large;
+  margin: 10px;
+  color: #757575;
+  top: 8px;
+}
+/*# sourceMappingURL=header.css.map */

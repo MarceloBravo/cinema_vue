@@ -1,5 +1,6 @@
 <template>
   <router-view/>
+  <ErrorHandlerVue/>
 </template>
 
 <style lang="scss">
@@ -32,3 +33,15 @@ nav {
   }
 }
 </style>
+
+<script>
+  import ErrorHandlerVue from "./components/errorHandler/errorHandler.vue";
+
+  export default {
+    name: 'App',
+
+    components:{
+      ErrorHandlerVue
+    }
+  }
+</script>

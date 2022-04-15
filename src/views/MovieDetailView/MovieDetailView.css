@@ -1,0 +1,54 @@
+.content-movie-detail {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  padding-top: 56px;
+}
+
+.content-movie-detail .poster-image-content {
+  padding: 10% 10% 5px 10%;
+}
+
+.content-movie-detail .poster-image-content .poster-image {
+  left: 0px;
+  width: 95%;
+  height: auto;
+}
+
+.content-movie-detail .movie-detail {
+  position: relative;
+  right: 0px;
+  width: 65%;
+  color: white;
+  text-align: left;
+}
+
+.content-movie-detail .movie-detail .logo-company {
+  -ms-flex-line-pack: center;
+      align-content: center;
+  width: 160px;
+  display: contents;
+}
+
+.content-movie-detail .movie-detail .logo-company img {
+  margin: 10px;
+  background: white;
+  padding: 2px;
+  max-height: 55px;
+  width: auto;
+}
+
+.content-movie-detail .background-image-content {
+  width: 100%;
+}
+
+.content-movie-detail .background-image-content .background-image {
+  opacity: 0.1;
+  height: 63%;
+  position: absolute;
+  right: 0px;
+}
+/*# sourceMappingURL=MovieDetailView.css.map */
