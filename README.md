@@ -1,29 +1,22 @@
-# cinema
+# cinema_vue
+Aplicaión web desarrollada en Vuejs que muestra un catálogo de péliculas, en la cual se pueden buscar películas, acceder a su detalle y ver el triller de las películas.
 
-## Project setup
+## Pasos para correr la aplicación
+1. Desde una ventana de simbolo de sistema, clonar el proyecto desde el repositorio de github:
 ```
-yarn install
+git clone https://github.com/MarceloBravo/cinema_vue.git
 ```
-
-### Compiles and hot-reloads for development
+2. Acceder al directorio del proyecto:
 ```
-yarn serve
+cd cinema_vue
 ```
-
-### Compiles and minifies for production
+3. Instalar dependencias con yarn:
 ```
-yarn build
+yarn
 ```
-
-### Run your unit tests
+4. correr la aplicación:
 ```
-yarn test:unit
-```
-
-### Lints and fixes files
-```
-yarn lint
+yarn start
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+Obs.: La aplicación puede ser probada desde https://marcelobravo.github.io/cinema_vue/
