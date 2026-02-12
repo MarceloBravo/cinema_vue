@@ -2,7 +2,7 @@ import axios from 'axios'
 import { endPoint, apiKey } from '../constants/js/constants'
 
 export const getMovie = (store, id) => {
-    axios.get(`${endPoint}/movie/${id}?api_key=${apiKey}&language=en-US`).then(res => {
+    axios.get(`${endPoint}movie/${id}?api_key=${apiKey}&language=en-US`).then(res => {
         store.dispatch('movieDetail', res.data)
     }).catch(error => {
         //console.log('getMovieError', error)
